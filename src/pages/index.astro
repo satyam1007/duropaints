@@ -1,0 +1,143 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Slider1 from "../components/Slider1.jsx";
+import Slider2 from "../components/Slider2.jsx";
+import ContactForm from "../components/Contact-Form.astro";
+const pageTitle = "Duro Paint";
+
+const items = [
+  {
+    title: "Satisfaction Assurance",
+    icon: "🛡️",
+    text: "The company assures that the product you buy from us will give you maximum satisfaction with application, appearance, and performance property.",
+  },
+  {
+    title: "Weather Protection",
+    icon: "☀️",
+    text: "Dublin Paints products have a tough surface that guards against damage from sunlight, moisture, stains, and dirt. Ideal for cold climates too.",
+  },
+  {
+    title: "Dirt & Water Resistant",
+    icon: "💧",
+    text: "Dublin Paints are formulated to resist both dirt and water that can cause discoloration, making it easier to wash off and keep clean.",
+  },
+  {
+    title: "LOW VOC",
+    icon: "🌿",
+    text: "Dublin Paints offers low-VOC products that are better in quality & performance than traditional higher VOC finishes.",
+  },
+  {
+    title: "Moisture Resistant",
+    icon: "🏠",
+    text: "The extra protection of Dublin Paints makes it harder for water to penetrate, ideal for kitchens, bathrooms, and exteriors.",
+  },
+  {
+    title: "Easy To Clean",
+    icon: "🧼",
+    text: "Dublin Paints resist penetration by household stains, making spills and marks easy to wipe off and clean.",
+  },
+];
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <Slider1 client:only />
+  <!-- First Section -->
+  <section
+    class="lg:pt-[80px] pt-[50px] flex justify-center items-center max-w-[1200px] mx-auto px-4 md:px-6"
+  >
+    <div class="wrapper w-full">
+      <div class="flex flex-col md:flex-row gap-12 items-center">
+        <!-- Text Section -->
+        <div class="md:w-1/2 flex flex-col text-left md:text-left">
+          <span class="text-[16px] font-bold text-[#41a4c3]"
+            >50 Years of Excellence</span
+          >
+          <h2 class="lg:text-[36px] text-[26px] font-medium text-[#333] pb-4">
+            A Legacy of Quality & Innovation
+          </h2>
+          <p class="text-[#0d1b2a] text-[15px] leading-[28px] mb-6">
+            Associated Paints – The first factory in the Middle East, our brand
+            name has stood for
+            <b>quality and innovative paint and coating solutions</b> since 1967.
+            We pioneered the
+            <b>"Desert Paint"</b> concept, crafting architectural paints designed
+            for
+            <b>high humidity and extreme temperatures</b>.
+          </p>
+          <ul class="lg:list-disc list-none space-y-4">
+            <li class="text-[#0d1b2a] text-[15px] leading-[28px]">
+              <b>Global Presence:</b> Operating in <b>21+ countries</b> with decades
+              of experience.
+            </li>
+            <li class="text-[#0d1b2a] text-[15px] leading-[28px]">
+              <b>Innovation & Expertise:</b> Backed by top <b
+                >paint laboratories</b
+              > & skilled professionals.
+            </li>
+            <li class="text-[#0d1b2a] text-[15px] leading-[28px]">
+              <b>Commitment to Quality:</b> Manufacturing <b
+                >durable, high-performance paints</b
+              > for homes & industries.
+            </li>
+          </ul>
+          <div class="mt-6">
+            <a
+              class="bg-[#41a4c3] text-[16px] font-semibold text-white px-6 py-3 rounded-md inline-block transition duration-300 hover:bg-[#31839d]"
+              href="#"
+            >
+              Read More
+            </a>
+          </div>
+        </div>
+
+        <!-- Image Section -->
+        <div class="flex justify-center md:w-1/2">
+          <div class="relative w-full max-w-[450px]">
+            <div
+              class="relative before:absolute before:rounded-md before:bg-[#41a4c3] before:w-full before:h-full before:content-[''] before:-z-10 before:-left-3 before:-top-3"
+            >
+              <img
+                alt="Paint Factory"
+                src="/public/images/paint_man.webp"
+                width="400"
+                height="365"
+                decoding="async"
+                class="w-full rounded-md shadow-lg"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Slider2 client:only />
+  <!-- Second Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h1 class="text-2xl font-bold text-[#404040] md:text-4xl uppercase">
+          Why People Choosing Us
+        </h1>
+      </div>
+
+      <div class="flex flex-wrap justify-between gap-8">
+        {
+          items.map((item) => (
+            <div class="w-full md:w-[30%] border-[1px] border-gray-300 border-dashed hover:border-[#41a4c3] rounded-lg p-6 flex flex-col shadow-md hover:shadow-lg transition-all duration-300 group">
+              <h3 class="text-xl font-bold text-[#404040]">{item.title}</h3>
+              <hr class="w-full border-t-[1px] border-dashed border-gray-300 my-3 group-hover:border-[#41a4c3] transition-all duration-300" />
+              <div class="flex gap-4 items-start">
+                <div class="text-5xl text-[#41a4c3]">{item.icon}</div>
+                <p class="text-[#888888]">{item.text}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <ContactForm />
+  <hr class="w-full border-t-[1px] border-gray-300" />
+</BaseLayout>

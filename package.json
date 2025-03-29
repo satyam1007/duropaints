@@ -1,0 +1,27 @@
+{
+  "name": "duropaints",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.15",
+    "astro": "^5.5.4",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "postcss-load-config": "^6.0.1",
+    "tailwindcss": "^4.0.15"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.2.1",
+    "@tailwindcss/vite": "^4.0.15",
+    "astro-icon": "^1.1.5",
+    "react-icons": "^5.5.0",
+    "react-slick": "^0.30.3",
+    "slick-carousel": "^1.8.1"
+  }
+}
