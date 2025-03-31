@@ -67,9 +67,9 @@ const Slider2 = () => {
     <div className="max-w-[1200px] mx-auto mt-[100px]">
       <div className="relative">
         <div className="mb-[30px] text-center">
-          <span className="lg:text-3xl text-2xl font-bold font-[cursive] text-[#41a4c3]">
+          <h1 className="lg:text-4xl text-3xl font-semibold font-[cursive] text-[#41a4c3]">
             What We Do
-          </span>
+          </h1>
           <h2 className="lg:text-4xl text-2xl font-bold text-[#333] pb-[20px] relative before:absolute before:content-[''] before:left-[50%] before:bottom-0 before:transform before:-translate-x-1/2 before:w-[60px] before:h-[3px] before:bg-[#41a4c3]">
             Our Services
           </h2>
