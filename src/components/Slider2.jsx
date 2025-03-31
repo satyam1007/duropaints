@@ -124,7 +124,7 @@ const Slider2 = () => {
               <img
                 alt={name}
                 src={imgSrc}
-                className="w-full h-full object-cover transition-transform duration-500 ease-in-out lg:group-hover:scale-110 group-hover:scale-0"
+                className="w-full h-full object-cover transition-transform duration-500 ease-in-out lg:group-hover:scale-110"
                 style={{ color: "transparent" }}
               />
             </div>
