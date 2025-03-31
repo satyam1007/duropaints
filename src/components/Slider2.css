@@ -1,0 +1,11 @@
+@media (pointer: coarse) {
+  .group:active .transform {
+    transform: translateY(0);
+    background-color: #fff;
+  }
+}
+
+.info-box.active {
+  transform: translateY(0);
+  background-color: #fff;
+}

@@ -4,18 +4,19 @@ import "../styles/global.css";
 import Logo from "../components/Logo.astro";
 ---
 
-<!-- <style>
-  ul a.active {
-    color: #cbbc99;
+<style>
+  a:active {
+    color: #41a4c3;
   }
-</style> -->
+</style>
+
 <div class="bg-[#0d1b2a] sticky top-0 left-0 right-0 z-50">
-  <div class="pt-1 px-4 md:px-8 lg:block hidden max-w-[1200px] mx-auto">
+  <div class="pt-1 px-4 md:px-8 lg:block max-w-[1200px] mx-auto">
     <div
       class="relative before:absolute before:w-full before:h-px before:bg-[rgba(255,255,255,.07)] before:bottom-0 before:left-0 before:content-['']"
     >
       <div
-        class="flex flex-col md:flex-row items-center justify-between flex-wrap"
+        class="flex flex-col md:flex-row items-center justify-between flex-wrap lg:pb-0 pb-[15px]"
       >
         {/* Contact Details */}
         <ul
@@ -56,7 +57,7 @@ import Logo from "../components/Logo.astro";
           </a>
         </div> -->
         <div class="mt-4 md:mt-0 text-center md:text-right">
-          <ul class="flex gap-4 pt-4">
+          <ul class="flex gap-4 p-2 md:p-4">
             <li>
               <a
                 class="text-white hover:text-[#41a4c3] transition-colors text-md"
@@ -99,7 +100,7 @@ import Logo from "../components/Logo.astro";
         {/* Mobile menu toggle button */}
         <div class="lg:hidden flex items-center justify-between p-4">
           <button
-            class="lg:hidden block pr-5 pb-3 cursor-pointer text-white text-2xl"
+            class="lg:hidden block pr-5 pb-3 cursor-pointer text-white text-3xl"
             id="menu-toggle"
           >
             <Icon name="humburger" />
@@ -182,7 +183,7 @@ import Logo from "../components/Logo.astro";
           id="mobile-menu"
         >
           <div class="lg:hidden flex justify-end items-end p-4">
-            <button class="text-2xl text-white cursor-pointer" id="menu-close">
+            <button class="text-3xl text-white cursor-pointer" id="menu-close">
               <Icon name="cross" />
             </button>
           </div>

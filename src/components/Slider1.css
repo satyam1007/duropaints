@@ -6,6 +6,6 @@
 
 @media (max-width: 768px) {
   .home-slider .slick-slide > div {
-    height: 300px;
+    height: 400px;
   }
 }
