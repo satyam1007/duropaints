@@ -125,9 +125,9 @@ const items = [
       <div class="flex flex-wrap justify-between gap-8">
         {
           items.map((item) => (
-            <div class="w-full md:w-[30%] border-[1px] border-gray-300 border-dashed hover:border-[#41a4c3] rounded-lg p-6 flex flex-col shadow-md hover:shadow-lg transition-all duration-300 group">
+            <div class="w-full md:w-[30%] border-[1px] border-gray-300 border-dashed hover:border-[#41a4c3] active:border-[#41a4c3] rounded-lg p-6 flex flex-col shadow-md hover:shadow-lg transition-all duration-300 group">
               <h3 class="text-xl font-bold text-[#404040]">{item.title}</h3>
-              <hr class="w-full border-t-[1px] border-dashed border-gray-300 my-3 group-hover:border-[#41a4c3] transition-all duration-300" />
+              <hr class="w-full border-t-[1px] border-dashed border-gray-300 my-3 group-hover:border-[#41a4c3] group-active:border-[#41a4c3] transition-all duration-300" />
               <div class="flex gap-4 items-start">
                 <div class="text-5xl text-[#41a4c3]">{item.icon}</div>
                 <p class="text-[#888888]">{item.text}</p>
