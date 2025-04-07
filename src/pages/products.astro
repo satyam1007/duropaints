@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "products";
+
+const products = [
+  {
+    title: "Paints",
+    desc: "Durable and weather-resistant coatings for interior and exterior surfaces.",
+    img: "/images/products/paint.png",
+  },
+  {
+    title: "Primers",
+    desc: "Enhances adhesion of paint to surfaces, increasing durability.",
+    img: "/images/products/primers.avif",
+  },
+  {
+    title: "Putty",
+    desc: "Smooths and levels surfaces before painting for a perfect finish.",
+    img: "/images/products/putty.png",
+  },
+  {
+    title: "Tile Grout",
+    desc: "Used to fill gaps between tiles for a clean, uniform look.",
+    img: "/images/products/grout.jpg",
+  },
+  {
+    title: "Adhesives",
+    desc: "Strong bonding agents used in construction and repairs.",
+    img: "/images/products/adhesives.jpg",
+  },
+  {
+    title: "Epoxy Coatings",
+    desc: "Highly durable protective coatings with chemical resistance.",
+    img: "/images/products/epoxy.webp",
+  },
+];
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <!-- Hero Section -->
+  <section
+    class="relative flex flex-col items-center justify-center z-30 bg-no-repeat bg-center bg-cover shadow-lg w-full sm:h-[400px] lg:h-[620px] h-[360px]"
+    style="background-image: url('/images/paint_bg.jpg');"
+  >
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative px-4 sm:px-6 lg:px-12 text-center">
+      <h2
+        class="text-white text-[32px] sm:text-[40px] lg:text-[60px] font-bold leading-tight mb-4"
+      >
+        Products
+      </h2>
+      <ol
+        class="flex flex-wrap justify-center items-center gap-2 text-white text-base sm:text-lg"
+      >
+        <li class="relative after:content-['/'] after:mx-2 after:opacity-70">
+          <a href="/" class="hover:text-[#41a4c3] transition-colors">Home</a>
+        </li>
+        <li class="text-[#41a4c3]">products</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Product Grid -->
+  <section class="bg-white py-16 px-4 sm:px-6 md:px-10 lg:px-20 text-gray-800">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-14">
+        Our Products
+      </h2>
+
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          products.map((product) => (
+            <div class="group bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-200">
+              <div class="overflow-hidden rounded-t-3xl">
+                <img
+                  src={product.img}
+                  alt={product.title}
+                  class="w-full h-60 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  onerror="this.src='/images/products/fallback.jpg'"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-[#41a4c3] mb-2 group-hover:text-[#2e90a0] transition-colors">
+                  {product.title}
+                </h3>
+                <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
+                  {product.desc}
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
