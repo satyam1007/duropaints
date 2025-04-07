@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "About Us";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <!-- Hero Section -->
+  <section
+    class="relative flex flex-col items-center justify-center z-30 bg-no-repeat bg-center bg-cover shadow-lg w-full h-[300px] sm:h-[400px] lg:h-[560px]"
+    style="background-image: url('/images/paint_bg.jpg');"
+  >
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative px-4 sm:px-6 lg:px-12 text-center">
+      <h2
+        class="text-white text-[32px] sm:text-[40px] lg:text-[60px] font-bold leading-tight mb-4"
+      >
+        About Us
+      </h2>
+      <ol
+        class="flex flex-wrap justify-center items-center gap-2 text-white text-base sm:text-lg"
+      >
+        <li class="relative after:content-['/'] after:mx-2 after:opacity-70">
+          <a href="/" class="hover:text-[#41a4c3] transition-colors">Home</a>
+        </li>
+        <li class="text-[#41a4c3]">About</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="bg-white text-gray-800 py-16 px-4 sm:px-6 md:px-10 lg:px-20">
+    <div class="max-w-6xl mx-auto">
+      <div class="space-y-8 text-base sm:text-lg leading-relaxed">
+        <p>
+          <strong>Duerow Colors Private Limited</strong>, established in 2007,
+          is a manufacturer of high-quality paints, primers, putties, tile
+          grouts, adhesives, and epoxy coatings. With a commitment to excellence
+          and customer satisfaction, we have grown into a trusted name in the
+          Indian paint industry.
+        </p>
+
+        <p>
+          Since <strong>April 25, 2018</strong>, we have partnered with <strong
+            >Regent Paints Inc., USA</strong
+          >, gaining access to their advanced formulations, technical upgrades,
+          and marketing strategies. This collaboration enables us to offer
+          innovative products that meet global standards.
+        </p>
+
+        <p>
+          Under this partnership, we are licensed to repackage and relabel
+          Regent Paints’ products for distribution across India, ensuring that
+          our customers receive international-grade solutions tailored to local
+          needs.
+        </p>
+
+        <p>
+          Our mission is to deliver high-performance, eco-friendly coatings
+          while maintaining the highest quality standards. We believe in
+          continuous research and development to bring cutting-edge technology
+          to our customers.
+        </p>
+
+        <p>
+          At Duerow Colors, customer satisfaction is our top priority. Our
+          dedicated support team ensures smooth and timely delivery, expert
+          consultation, and dependable after-sales service.
+        </p>
+
+        <div class="mt-12 border-t border-gray-300 pt-8">
+          <h3 class="text-xl sm:text-2xl font-semibold mb-4">
+            Contact Information
+          </h3>
+          <ul class="space-y-2 text-base sm:text-lg">
+            <li>
+              <strong>Address:</strong> Green Square Market, Hisar, Haryana, 125001
+            </li>
+            <li>
+              <strong>Working Hours:</strong> Mon - Sat, 9:00 AM - 9:00 PM
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

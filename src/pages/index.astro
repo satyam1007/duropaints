@@ -1,8 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Slider1 from "../components/Slider1.jsx";
-import Slider2 from "../components/Slider2.jsx";
-import ContactForm from "../components/Contact-Form.astro";
 const pageTitle = "Duerow Paint";
 
 const items = [
@@ -111,8 +109,6 @@ const items = [
       </div>
     </div>
   </section>
-
-  <Slider2 client:only />
   <!-- Second Section -->
   <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
@@ -138,6 +134,4 @@ const items = [
       </div>
     </div>
   </section>
-  <ContactForm />
-  <hr class="w-full border-t-[1px] border-gray-300" />
 </BaseLayout>
