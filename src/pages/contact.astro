@@ -1,0 +1,115 @@
+---
+// Contact.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Contact";
+import { Icon } from "astro-icon/components";
+import ContactForm from "../components/Contact-Form.astro";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <!-- Hero Section -->
+  <section
+    class="relative flex flex-col items-center justify-center z-30 bg-no-repeat bg-center bg-cover shadow-lg w-full sm:h-[400px] lg:h-[620px] h-[360px]"
+    style="background-image: url('/images/paint_bg.jpg');"
+  >
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative px-4 sm:px-6 lg:px-12 text-center">
+      <h2
+        class="text-white text-[32px] sm:text-[40px] lg:text-[60px] font-bold leading-tight mb-4"
+      >
+        Contact
+      </h2>
+      <ol
+        class="flex flex-wrap justify-center items-center gap-2 text-white text-base sm:text-lg"
+      >
+        <li class="relative after:content-['/'] after:mx-2 after:opacity-70">
+          <a href="/" class="hover:text-[#41a4c3] transition-colors">Home</a>
+        </li>
+        <li class="text-[#41a4c3]">contact</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="relative pt-[120px] z-20">
+    <div class="wrapper">
+      <div class="lg:pb-[50px] pb-[25px]">
+        <div class="flex justify-center items-center flex-wrap gap-3 px-4">
+          <div class="lg:mb-0 mb-7">
+            <div
+              class="text-center p-[40px] w-[300px]"
+              style="box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;"
+            >
+              <div
+                class="w-[85px] h-[85px] bg-[#f5f5f5] leading-[85px] text-center mx-auto rounded-full flex items-center justify-center"
+              >
+                <div class="icon">
+                  <span class="text-[35px] leading-[85px] text-[#41a4c3]">
+                    <Icon name="map" id="map" />
+                  </span>
+                </div>
+              </div><h2
+                class="text-[25px] text-[#282e3f] font-medium my-[20px]"
+              >
+                Address
+              </h2><p class="text-[#666] text-[16px] leading-[22px]">
+                Green Square Market, Hisar, Haryana, 125001
+              </p>
+            </div>
+          </div>
+          <div class="lg:mb-0 mb-7">
+            <div
+              class="text-center p-[40px] w-[300px]"
+              style="box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;"
+            >
+              <div
+                class="w-[85px] h-[85px] bg-[#f5f5f5] leading-[85px] text-center mx-auto rounded-full flex items-center justify-center"
+              >
+                <div class="icon">
+                  <span class="text-[35px] leading-[85px] text-[#41a4c3]">
+                    <Icon name="envelope" id="envelope" />
+                  </span>
+                </div>
+              </div>
+              <h2 class="text-[25px] text-[#282e3f] font-medium my-[20px]">
+                Email Us
+              </h2>
+              <p class="text-[#666] text-[16px] leading-[22px]">
+                duerowpaints@gmail.com
+              </p>
+              <p class="text-[#666] text-[16px] leading-[22px]">
+                duerow@gmail.com
+              </p>
+            </div>
+          </div>
+          <div class="lg:mb-0 mb-7">
+            <div
+              class="text-center p-[40px] w-[300px]"
+              style="box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;"
+            >
+              <div
+                class="w-[85px] h-[85px] bg-[#f5f5f5] leading-[85px] text-center mx-auto rounded-full flex items-center justify-center"
+              >
+                <div class="icon">
+                  <span class="text-[35px] leading-[85px] text-[#41a4c3]">
+                    <Icon name="mobile" id="mobile" />
+                  </span>
+                </div>
+              </div>
+              <h2 class="text-[25px] text-[#282e3f] font-medium my-[20px]">
+                Call Now
+              </h2>
+              <p class="text-[#666] text-[16px] leading-[22px]">
+                +1 800 123 456 789
+              </p>
+              <p class="text-[#666] text-[16px] leading-[22px]">
+                +1 800 123 654 987
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <ContactForm />
+  <hr class="text-white" />
+</BaseLayout>

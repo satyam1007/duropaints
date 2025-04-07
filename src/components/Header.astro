@@ -16,6 +16,77 @@ import Logo from "../components/Logo.astro";
 </style>
 
 <div class="bg-[#0d1b2a] sticky top-0 left-0 right-0 z-50">
+  <div class="pt-1 px-4 md:px-8 lg:block max-w-[1200px] mx-auto">
+    <div
+      class="relative before:absolute before:w-full before:h-px before:bg-[rgba(255,255,255,.07)] before:bottom-0 before:left-0 before:content-['']"
+    >
+      <div
+        class="flex flex-col md:flex-row items-center justify-between flex-wrap lg:pb-0 pb-[15px]"
+      >
+        {/* Contact Details */}
+        <ul
+          class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 font-extralight"
+        >
+          <li class="text-white inline-flex items-center p-2 md:p-4">
+            <span class="pr-2 text-xl text-[#41a4c3]">
+              <Icon name="envelope" />
+            </span>
+            duerowpaints@gmail.com
+          </li>
+          <li class="relative text-white inline-flex items-center p-2 md:p-4">
+            <span class="pr-2 text-xl text-[#41a4c3]">
+              <Icon name="mobile" />
+            </span>
+            3164-5456854
+            <span
+              class="absolute left-0 top-1/3 w-px h-6 bg-[rgba(255,255,255,.07)] z-10 transform -translate-x-1/2 md:block hidden"
+            ></span>
+          </li>
+          <li class="relative text-white inline-flex items-center p-2 md:p-4">
+            <span class="pr-2 text-xl text-[#41a4c3]">
+              <Icon name="clock" />
+            </span>
+            9AM - PM
+            <span
+              class="absolute left-0 top-1/3 w-px h-6 bg-[rgba(255,255,255,.07)] z-10 transform -translate-x-1/2 md:block hidden"
+            ></span>
+          </li>
+        </ul>
+        {/* Free Consulting Button */}
+        <!-- <div class="mt-4 md:mt-0 text-center md:text-right">
+          <a
+            class="border border-[#cbbc99] text-[#cbbc99] py-2 px-4 text-sm md:text-base rounded-full hover:bg-[#cbbc99] hover:text-[#272c3f] duration-300"
+            href="/contact"
+          >
+            Free Consulting
+          </a>
+        </div> -->
+        <div class="mt-4 md:mt-0 text-center md:text-right">
+          <ul class="flex gap-4 p-2 md:p-4">
+            <li>
+              <a
+                class="text-white hover:text-[#41a4c3] transition-colors text-md"
+                href="#"><Icon name="facebook" id="facebook" /></a
+              >
+            </li>
+            <li>
+              <a
+                class="text-white hover:text-[#41a4c3] transition-colors text-md"
+                href="#"><Icon name="twitter" id="twitter" /></a
+              >
+            </li>
+            <li>
+              <a
+                class="text-white hover:text-[#41a4c3] transition-colors text-md"
+                href="#"><Icon name="linkdin" id="linkdin" /></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="bg-[#0d1b2a] max-w-[1200px] mx-auto">
     <div class="px-8 py-2">
       <div class="flex items-center justify-between">

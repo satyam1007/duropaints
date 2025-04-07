@@ -4,7 +4,7 @@ import Logo from "../components/Logo.astro";
 ---
 
 <style>
-  a.active {
+  ul.pages a.active {
     color: #41a4c3;
     font-weight: bold;
   }
@@ -28,6 +28,28 @@ import Logo from "../components/Logo.astro";
             paints, primers, putty, tile grout, and epoxy coatings in
             collaboration with Regent Paints Inc., USA.
           </p>
+
+          <!-- ✅ Social Icons -->
+          <ul class="flex gap-4 pt-4">
+            <li>
+              <a
+                class="text-white transition-colors hover:text-[#41a4c3] text-md"
+                href="/"><Icon name="facebook" id="facebook" /></a
+              >
+            </li>
+            <li>
+              <a
+                class="text-white transition-colors hover:text-[#41a4c3] text-md"
+                href="/"><Icon name="twitter" id="twitter" /></a
+              >
+            </li>
+            <li>
+              <a
+                class="text-white transition-colors hover:text-[#41a4c3] text-md"
+                href="/"><Icon name="linkdin" id="linkdin" /></a
+              >
+            </li>
+          </ul>
         </div>
 
         <!-- Column 2 -->
@@ -35,11 +57,11 @@ import Logo from "../components/Logo.astro";
           <h3 class="text-xl font-medium text-white capitalize mb-7">
             Quick Link
           </h3>
-          <ul>
+          <ul class="pages">
             <li class="mb-2">
               <a
                 class="text-white hover:text-[#41a4c3] active:text-[#41a4c3] transition-colors"
-                href="/home">Home</a
+                href="/">Home</a
               >
             </li>
             <li class="mb-2">
@@ -51,7 +73,7 @@ import Logo from "../components/Logo.astro";
             <li class="mb-2">
               <a
                 class="text-white hover:text-[#41a4c3] active:text-[#41a4c3] transition-colors"
-                href="/practice">Products</a
+                href="/products">Products</a
               >
             </li>
             <li class="mb-2">
@@ -73,6 +95,8 @@ import Logo from "../components/Logo.astro";
               Green Square Market, Hisar, Haryana, 125001
             </li>
             <li class="mb-2 text-white">Mon - Sat, 9:00 AM - 9:00 PM</li>
+            <li class="mb-2 text-white">Phone: 888 123-4587</li>
+            <li class="mb-2 text-white">Email: duerowpaints@gmail.com</li>
           </ul>
         </div>
       </div>
