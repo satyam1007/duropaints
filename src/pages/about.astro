@@ -1,12 +1,45 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "about us";
+
+const items = [
+  {
+    title: "Satisfaction Assurance",
+    icon: "🛡️",
+    text: "The company assures that the product you buy from us, will give you maximum satisfaction with the application, appearance and performance property.",
+  },
+  {
+    title: "Weather Protection",
+    icon: "☀️",
+    text: "Duerow Paints products has a tough surface that guards againts damage from sunlight, moisture, stain and dirt. It is ideal for application in cold climates also.",
+  },
+  {
+    title: "Dirt & Water Resistant",
+    icon: "💧",
+    text: "Duerow Paints are formulated to resist both dirt and water that can cause discoloration in the paint film, making it easier to wash off and keep clean.",
+  },
+  {
+    title: "LOW VOC",
+    icon: "🌿",
+    text: "In the past, low-VOW products were perceived as less durable paints. Today, Duerow Paints offers low-VOW products that are better than the quality & performance of higher VOC finishes.",
+  },
+  {
+    title: "Moisture Resistant",
+    icon: "🏠",
+    text: "The extra protective of Duerow Paints makes it harder for water to penetrate, making it an ideal choice especially for kitchens, bathrooms and exteriors.",
+  },
+  {
+    title: "Easy To Clean",
+    icon: "🧼",
+    text: "Duerow Paints resist penetration by common household stains, so spills and marks-whether from cooking or kids are easier to wipe off and clean.",
+  },
+];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <!-- Hero Section -->
   <section
-    class="relative flex flex-col items-center justify-center z-30 bg-no-repeat bg-center bg-cover shadow-lg w-full sm:h-[400px] lg:h-[620px] h-[360px]"
+    class="relative flex flex-col items-center justify-center z-30 bg-no-repeat bg-center bg-cover shadow-lg w-full sm:h-[400px] lg:h-[620px] h-[300px]"
     style="background-image: url('/images/paint_bg.jpg');"
   >
     <div class="absolute inset-0 bg-black/60"></div>
@@ -66,6 +99,35 @@ const pageTitle = "about us";
           dedicated support team ensures smooth and timely delivery, expert
           consultation, and dependable after-sales service.
         </p>
+
+        <section class="py-16 bg-white">
+          <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+              <h1
+                class="font-bold text-[#404040] lg:text-4xl text-2xl uppercase"
+              >
+                Why People Choosing Us
+              </h1>
+            </div>
+
+            <div class="flex flex-wrap justify-between gap-8">
+              {
+                items.map((item) => (
+                  <div class="w-full md:w-[30%] border-[1px] border-gray-300 border-dashed hover:border-[#41a4c3] active:border-[#41a4c3] rounded-lg p-6 flex flex-col shadow-md hover:shadow-lg transition-all duration-300 group">
+                    <h3 class="text-xl font-bold text-[#404040]">
+                      {item.title}
+                    </h3>
+                    <hr class="w-full border-t-[1px] border-dashed border-gray-300 my-3 group-hover:border-[#41a4c3] group-active:border-[#41a4c3] transition-all duration-300" />
+                    <div class="flex gap-4 items-start">
+                      <div class="text-5xl text-[#41a4c3]">{item.icon}</div>
+                      <p class="text-[#888888]">{item.text}</p>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </section>
 
         <div class="mt-12 border-t border-gray-300 pt-8">
           <h3 class="text-xl sm:text-2xl font-semibold mb-4">

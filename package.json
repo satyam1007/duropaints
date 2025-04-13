@@ -1,5 +1,5 @@
 {
-  "name": "duropaints",
+  "name": "duerowpaints",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -24,5 +24,22 @@
     "react-icons": "^5.5.0",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1"
-  }
+  },
+  "description": "```sh npm create astro@latest -- --template basics ```",
+  "main": "index.astro",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satyam1007/duropaints.git"
+  },
+  "keywords": [
+    "A",
+    "paint",
+    "website"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/satyam1007/duropaints/issues"
+  },
+  "homepage": "https://github.com/satyam1007/duropaints#readme"
 }
