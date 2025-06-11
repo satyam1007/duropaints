@@ -5,10 +5,10 @@ import "slick-carousel/slick/slick-theme.css";
 import { GrNext, GrPrevious } from "react-icons/gr";
 
 const images = [
-  "/public/images/duerow_img_1.png",
-  "/public/images/duerow_img_2.png",
-  "/public/images/duerow_img_3.png",
-  "/public/images/duerow_img_4.png",
+  "/images/duerow_img_1.png",
+  "/images/duerow_img_2.png",
+  "/images/duerow_img_3.png",
+  "/images/duerow_img_4.png",
 ];
 
 // Custom Arrows with better styling
