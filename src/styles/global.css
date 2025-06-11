@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1800px;
+  }
+}
+
+html {
+  font-size: 100%;
+}
+
+@media (min-width: 1536px) {
+  html {
+    font-size: 110%;
+  }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 120%;
+  }
+}

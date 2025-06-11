@@ -39,54 +39,140 @@ const products = [
 <BaseLayout pageTitle={pageTitle}>
   <!-- Hero Section -->
   <section
-    class="relative flex flex-col items-center justify-center z-30 bg-no-repeat bg-center bg-cover shadow-lg w-full sm:h-[400px] lg:h-[620px] h-[300px]"
+    class="relative flex flex-col items-center justify-center z-30 bg-no-repeat bg-center bg-cover w-full min-h-[300px] sm:min-h-[400px] lg:min-h-[620px] overflow-hidden"
     style="background-image: url('/images/paint_bg.jpg');"
   >
-    <div class="absolute inset-0 bg-black/60"></div>
-    <div class="relative px-4 sm:px-6 lg:px-12 text-center">
-      <h2
-        class="text-white text-[32px] sm:text-[40px] lg:text-[60px] font-bold leading-tight mb-4"
+    <!-- Animated gradient overlay -->
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70 animate-gradient-shift"
+    >
+    </div>
+
+    <!-- Content container with smooth entrance animation -->
+    <div class="relative px-4 sm:px-6 lg:px-12 text-center animate-fade-in-up">
+      <h1
+        class="text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6"
+        style="text-shadow: 0 2px 10px rgba(0,0,0,0.3);"
       >
-        Products
-      </h2>
-      <ol
-        class="flex flex-wrap justify-center items-center gap-2 text-white text-base sm:text-lg"
+        <span
+          class="inline-block transform transition-all duration-500 hover:scale-105"
+        >
+          Products <span class="text-[#41a4c3]">Duerow</span>
+        </span>
+      </h1>
+
+      <p
+        class="max-w-2xl mx-auto text-white/90 text-lg sm:text-xl lg:text-2xl mb-8 font-light"
       >
-        <li class="relative after:content-['/'] after:mx-2 after:opacity-70">
-          <a href="/" class="hover:text-[#41a4c3] transition-colors">Home</a>
-        </li>
-        <li class="text-[#41a4c3]">products</li>
-      </ol>
+        Crafting premium colors since 2007 with American excellence
+      </p>
+
+      <!-- Breadcrumbs with improved interaction -->
+      <nav aria-label="Breadcrumb">
+        <ol
+          class="flex flex-wrap justify-center items-center gap-2 text-white text-base sm:text-lg"
+        >
+          <li
+            class="relative flex items-center after:content-['/'] after:mx-2 after:opacity-50 after:text-sm"
+          >
+            <a
+              href="/"
+              class="hover:text-[#41a4c3] transition-colors duration-300 flex items-center group"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 mr-1 group-hover:translate-x-0.5 transition-transform"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                ></path>
+              </svg>
+              Home
+            </a>
+          </li>
+          <li class="text-[#41a4c3] font-medium flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 mr-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            Products
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Decorative elements -->
+    <div
+      class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/30 to-transparent"
+    >
+    </div>
+
+    <!-- Scroll indicator -->
+    <div
+      class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+    >
+      <svg
+        class="h-6 w-6 lg:w-8 lg:h-8 text-white/80"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
     </div>
   </section>
 
   <!-- Product Grid -->
-  <section class="bg-white py-16 px-4 sm:px-6 md:px-10 lg:px-20 text-gray-800">
+  <section class="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 text-gray-800">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-14">
-        Our Products
-      </h2>
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Our Products
+        </h2>
+        <p class="max-w-2xl mx-auto text-lg text-gray-600">
+          Discover our high-quality solutions designed for your needs
+        </p>
+      </div>
 
-      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {
           products.map((product) => (
-            <div class="group bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-200">
-              <div class="overflow-hidden rounded-t-3xl">
+            <div class="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100 hover:border-[#41a4c3]/20">
+              <div class="relative overflow-hidden aspect-[4/3]">
                 <img
                   src={product.img}
                   alt={product.title}
-                  class="w-full h-60 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                   onerror="this.src='/images/products/fallback.jpg'"
                 />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <div class="p-6">
-                <h3 class="text-xl font-semibold text-[#41a4c3] mb-2 group-hover:text-[#2e90a0] transition-colors">
+                <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#41a4c3] transition-colors">
                   {product.title}
                 </h3>
-                <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
-                  {product.desc}
-                </p>
+                <p class="text-gray-600 leading-relaxed">{product.desc}</p>
               </div>
             </div>
           ))

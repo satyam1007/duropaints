@@ -36,113 +36,426 @@ const items = [
 ];
 ---
 
+<!-- Add these animations to your CSS -->
+<style>
+  .animate-gradient-shift {
+    animation: gradientShift 8s ease infinite;
+    background-size: 200% 200%;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-bounce {
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0) translateX(-50%);
+    }
+    40% {
+      transform: translateY(-20px) translateX(-50%);
+    }
+    60% {
+      transform: translateY(-10px) translateX(-50%);
+    }
+  }
+</style>
+
 <BaseLayout pageTitle={pageTitle}>
   <!-- Hero Section -->
   <section
-    class="relative flex flex-col items-center justify-center z-30 bg-no-repeat bg-center bg-cover shadow-lg w-full sm:h-[400px] lg:h-[620px] h-[300px]"
+    class="relative flex flex-col items-center justify-center z-30 bg-no-repeat bg-center bg-cover w-full min-h-[300px] sm:min-h-[400px] lg:min-h-[620px] overflow-hidden"
     style="background-image: url('/images/paint_bg.jpg');"
   >
-    <div class="absolute inset-0 bg-black/60"></div>
-    <div class="relative px-4 sm:px-6 lg:px-12 text-center">
-      <h2
-        class="text-white text-[32px] sm:text-[40px] lg:text-[60px] font-bold leading-tight mb-4"
+    <!-- Animated gradient overlay -->
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70 animate-gradient-shift"
+    >
+    </div>
+
+    <!-- Content container with smooth entrance animation -->
+    <div class="relative px-4 sm:px-6 lg:px-12 text-center animate-fade-in-up">
+      <h1
+        class="text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6"
+        style="text-shadow: 0 2px 10px rgba(0,0,0,0.3);"
       >
-        About Us
-      </h2>
-      <ol
-        class="flex flex-wrap justify-center items-center gap-2 text-white text-base sm:text-lg"
+        <span
+          class="inline-block transform transition-all duration-500 hover:scale-105"
+        >
+          About <span class="text-[#41a4c3]">Duerow</span>
+        </span>
+      </h1>
+
+      <p
+        class="max-w-2xl mx-auto text-white/90 text-lg sm:text-xl lg:text-2xl mb-8 font-light"
       >
-        <li class="relative after:content-['/'] after:mx-2 after:opacity-70">
-          <a href="/" class="hover:text-[#41a4c3] transition-colors">Home</a>
-        </li>
-        <li class="text-[#41a4c3]">About</li>
-      </ol>
+        Crafting premium colors since 2007 with American excellence
+      </p>
+
+      <!-- Breadcrumbs with improved interaction -->
+      <nav aria-label="Breadcrumb">
+        <ol
+          class="flex flex-wrap justify-center items-center gap-2 text-white text-base sm:text-lg"
+        >
+          <li
+            class="relative flex items-center after:content-['/'] after:mx-2 after:opacity-50 after:text-sm"
+          >
+            <a
+              href="/"
+              class="hover:text-[#41a4c3] transition-colors duration-300 flex items-center group"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 mr-1 group-hover:translate-x-0.5 transition-transform"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                ></path>
+              </svg>
+              Home
+            </a>
+          </li>
+          <li class="text-[#41a4c3] font-medium flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 mr-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            About
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Decorative elements -->
+    <div
+      class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/30 to-transparent"
+    >
+    </div>
+
+    <!-- Scroll indicator -->
+    <div
+      class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+    >
+      <svg
+        class="h-6 w-6 lg:w-8 lg:h-8 text-white/80"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
     </div>
   </section>
 
   <!-- Content Section -->
-  <section class="bg-white text-gray-800 py-16 px-4 sm:px-6 md:px-10 lg:px-20">
-    <div class="max-w-6xl mx-auto">
-      <div class="space-y-8 text-base sm:text-lg leading-relaxed">
-        <p>
-          <strong>Duerow Colors Private Limited</strong>, established in 2007,
-          is a manufacturer of high-quality paints, primers, putties, tile
-          grouts, adhesives, and epoxy coatings. With a commitment to excellence
-          and customer satisfaction, we have grown into a trusted name in the
-          Indian paint industry.
+  <section class="bg-white text-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <!-- Hero Section -->
+      <div class="mb-16 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Duerow Colors Private Limited
+        </h1>
+        <div class="w-24 h-1.5 bg-[#41a4c3] mx-auto mb-6"></div>
+        <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+          Manufacturing premium coatings since 2007 with a commitment to quality
+          and innovation
         </p>
+      </div>
 
-        <p>
-          Since <strong>April 25, 2018</strong>, we have partnered with <strong
-            >Regent Paints Inc., USA</strong
-          >, gaining access to their advanced formulations, technical upgrades,
-          and marketing strategies. This collaboration enables us to offer
-          innovative products that meet global standards.
-        </p>
+      <!-- About Content -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-20">
+        <div class="space-y-6 text-lg leading-relaxed">
+          <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-[#41a4c3]">
+            <p>
+              Established in 2007, we manufacture high-quality paints, primers,
+              putties, tile grouts, adhesives, and epoxy coatings. Our
+              commitment to excellence has made us a trusted name in the Indian
+              paint industry.
+            </p>
+          </div>
 
-        <p>
-          Under this partnership, we are licensed to repackage and relabel
-          Regent Paints’ products for distribution across India, ensuring that
-          our customers receive international-grade solutions tailored to local
-          needs.
-        </p>
+          <p>
+            Since <strong class="text-[#41a4c3]">April 25, 2018</strong>, we've
+            partnered with
+            <strong class="text-[#41a4c3]"> Regent Paints Inc., USA</strong>,
+            gaining access to advanced formulations and technical expertise to
+            deliver products meeting global standards.
+          </p>
 
-        <p>
-          Our mission is to deliver high-performance, eco-friendly coatings
-          while maintaining the highest quality standards. We believe in
-          continuous research and development to bring cutting-edge technology
-          to our customers.
-        </p>
+          <p>
+            Under this partnership, we are licensed to repackage and relabel
+            Regent Paints' products for distribution across India, ensuring that
+            our customers receive international-grade solutions tailored to
+            local needs.
+          </p>
+        </div>
 
-        <p>
-          At Duerow Colors, customer satisfaction is our top priority. Our
-          dedicated support team ensures smooth and timely delivery, expert
-          consultation, and dependable after-sales service.
-        </p>
+        <div class="space-y-6 text-lg leading-relaxed">
+          <p>
+            Our mission is to deliver high-performance, eco-friendly coatings
+            while maintaining the highest quality standards. We believe in
+            continuous research and development to bring cutting-edge technology
+            to our customers.
+          </p>
 
-        <section class="py-16 bg-white">
-          <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-              <h1
-                class="font-bold text-[#404040] lg:text-4xl text-2xl uppercase"
-              >
-                Why People Choosing Us
-              </h1>
-            </div>
+          <div class="bg-[#f8fcff] border border-[#41a4c3]/20 p-6 rounded-xl">
+            <p>
+              At Duerow Colors, customer satisfaction is our top priority. Our
+              dedicated support team ensures smooth and timely delivery, expert
+              consultation, and dependable after-sales service.
+            </p>
+          </div>
+        </div>
+      </div>
 
-            <div class="flex flex-wrap justify-between gap-8">
-              {
-                items.map((item) => (
-                  <div class="w-full md:w-[30%] border-[1px] border-gray-300 border-dashed hover:border-[#41a4c3] active:border-[#41a4c3] rounded-lg p-6 flex flex-col shadow-md hover:shadow-lg transition-all duration-300 group">
-                    <h3 class="text-xl font-bold text-[#404040]">
-                      {item.title}
-                    </h3>
-                    <hr class="w-full border-t-[1px] border-dashed border-gray-300 my-3 group-hover:border-[#41a4c3] group-active:border-[#41a4c3] transition-all duration-300" />
-                    <div class="flex gap-4 items-start">
-                      <div class="text-5xl text-[#41a4c3]">{item.icon}</div>
-                      <p class="text-[#888888]">{item.text}</p>
-                    </div>
+      <!-- Why Choose Us Section -->
+      <section class="py-16">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Why People Choose Duerow
+          </h2>
+          <div class="w-20 h-1.5 bg-[#41a4c3] mx-auto mb-6"></div>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            We combine global expertise with local understanding to deliver
+            exceptional results
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {
+            items.map((item) => (
+              <div class="relative bg-white rounded-2xl p-8 flex flex-col h-full transition-all duration-300 hover:shadow-xl border border-gray-200 hover:border-[#41a4c3]/50 group overflow-hidden">
+                {/* Hover effect */}
+                <div class="absolute inset-0 bg-gradient-to-br from-white via-[#f7fbfc] to-[#e6f4f8] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0" />
+
+                {/* Content */}
+                <div class="relative z-10 flex flex-col h-full">
+                  {/* Icon */}
+                  <div class="text-5xl text-[#41a4c3] mb-6 transition-transform duration-300 group-hover:scale-110">
+                    {item.icon}
                   </div>
-                ))
-              }
+
+                  {/* Title */}
+                  <h3 class="text-xl font-bold text-gray-800 mb-4 group-hover:text-[#41a4c3] transition-colors duration-300">
+                    {item.title}
+                  </h3>
+
+                  {/* Divider */}
+                  <div class="w-12 h-1 bg-[#41a4c3]/70 mb-4 rounded-full transition-all duration-300 group-hover:w-16" />
+
+                  {/* Text */}
+                  <p class="text-gray-600 flex-grow">{item.text}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <div class="mt-20 bg-[#f8fcff] rounded-2xl overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <div class="p-10">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">
+              Contact Information
+            </h3>
+
+            <ul class="space-y-5">
+              <li class="flex">
+                <div class="flex-shrink-0">
+                  <div
+                    class="flex items-center justify-center h-10 w-10 rounded-lg bg-[#41a4c3]/10 text-[#41a4c3]"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      ></path>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-lg font-medium text-gray-900">Address</h4>
+                  <p class="text-gray-600 mt-1">
+                    Green Square Market, Hisar, Haryana, 125001
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex">
+                <div class="flex-shrink-0">
+                  <div
+                    class="flex items-center justify-center h-10 w-10 rounded-lg bg-[#41a4c3]/10 text-[#41a4c3]"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-lg font-medium text-gray-900">Phone</h4>
+                  <p class="text-gray-600 mt-1">+91 94160-41413</p>
+                </div>
+              </li>
+
+              <li class="flex">
+                <div class="flex-shrink-0">
+                  <div
+                    class="flex items-center justify-center h-10 w-10 rounded-lg bg-[#41a4c3]/10 text-[#41a4c3]"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-lg font-medium text-gray-900">Email</h4>
+                  <p class="text-gray-600 mt-1">duerowpaints@gmail.com</p>
+                </div>
+              </li>
+
+              <li class="flex">
+                <div class="flex-shrink-0">
+                  <div
+                    class="flex items-center justify-center h-10 w-10 rounded-lg bg-[#41a4c3]/10 text-[#41a4c3]"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-lg font-medium text-gray-900">
+                    Working Hours
+                  </h4>
+                  <p class="text-gray-600 mt-1">Mon - Sat, 9:00 AM - 6:00 PM</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-[#41a4c3] p-10 flex items-center">
+            <div class="text-white">
+              <h3 class="text-2xl font-bold mb-4">Our Commitment</h3>
+              <p class="text-lg mb-6 opacity-90">
+                We're dedicated to providing exceptional service and support to
+                all our customers. Reach out to us for expert advice, product
+                information, or any assistance you may need.
+              </p>
+              <div class="flex items-center space-x-4">
+                <div class="flex-shrink-0 bg-white/20 p-3 rounded-full">
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm opacity-80">Ready to assist you</p>
+                  <p class="text-xl font-semibold">+91 94160-41413</p>
+                </div>
+              </div>
             </div>
           </div>
-        </section>
-
-        <div class="mt-12 border-t border-gray-300 pt-8">
-          <h3 class="text-xl sm:text-2xl font-semibold mb-4">
-            Contact Information
-          </h3>
-          <ul class="space-y-2 text-base sm:text-lg">
-            <li>
-              <strong>Address:</strong> Green Square Market, Hisar, Haryana, 125001
-            </li>
-            <li>
-              <li><strong>Phone:</strong> +91 12345 67890</li>
-              <li><strong>Email:</strong> duerowpaints@gmail.com</li>
-              <strong>Working Hours:</strong> Mon - Sat, 9:00 AM - 9:00 PM
-            </li>
-          </ul>
         </div>
       </div>
     </div>

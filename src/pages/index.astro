@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Slider1 from "../components/Slider1.jsx";
 const pageTitle = "duerow paint";
@@ -40,93 +41,171 @@ const items = [
 <BaseLayout pageTitle={pageTitle}>
   <Slider1 client:only />
   <!-- First Section -->
-  <section
-    class="lg:pt-[80px] pt-[50px] flex justify-center items-center max-w-[1200px] mx-auto px-4 md:px-6"
-  >
-    <div class="wrapper w-full">
-      <div class="flex flex-col md:flex-row gap-12 items-center">
+  <section class="py-20 bg-gradient-to-b from-white to-gray-50">
+    <div class="container mx-auto px-4 md:px-6 max-w-6xl">
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
         <!-- Text Section -->
-        <div class="md:w-1/2 flex flex-col text-left md:text-left">
-          <span class="text-[16px] font-bold text-[#41a4c3]"> Since 2007 </span>
-          <h2 class="lg:text-[36px] text-[26px] font-medium text-[#333] pb-4">
-            Manufacturing Excellence with Global Collaboration
-          </h2>
-          <p class="text-[#0d1b2a] text-[15px] leading-[28px] mb-6">
-            Duerow Colors Private Limited was established in 2007 and has been
-            manufacturing high-quality <b
-              >paints, primers, putty, cement-based paints, tile grout,
-              adhesive, and epoxy coatings</b
-            >. Since <b>April 25, 2018</b>, we have been in a technical
-            collaboration with
-            <b>Regent Paints Inc., USA</b>, headquartered at <b
-              >69-44 Cooper Avenue, Glendale, New York, 11385</b
-            >.
-          </p>
-          <ul class="lg:list-disc list-none space-y-4">
-            <li class="text-[#0d1b2a] text-[15px] leading-[28px]">
-              <b>Global Expertise:</b> Regent Paints Inc. is a leading manufacturer
-              and exporter of <b>decorative and industrial paints</b>, and
-              related products.
-            </li>
-            <li class="text-[#0d1b2a] text-[15px] leading-[28px]">
-              <b>Technology & Guidance:</b> Regent Paints Inc. guides Duerow Colors
-              in <b>formulation, technology upgrades, and marketing</b>.
-            </li>
-            <li class="text-[#0d1b2a] text-[15px] leading-[28px]">
-              <b>Authorized Partner:</b> Duerow Colors Pvt. Ltd. is authorized to
-              <b>repackage and relabel Regent Paints products</b> for distribution.
-            </li>
-          </ul>
-          <div class="mt-6">
-            <a
-              class="bg-[#41a4c3] text-[16px] font-semibold text-white px-6 py-3 rounded-md inline-block transition duration-300 hover:bg-[#31839d] active:bg-[#31839d]"
-              href="https://www.RegentPaintsUSA.com"
-              target="_blank"
+        <div class="lg:w-1/2 space-y-8">
+          <div class="flex flex-col gap-6">
+            <span
+              class="inline-block px-4 py-1.5 bg-blue-50 text-[#41a4c3] rounded-full text-sm font-semibold tracking-wide w-fit shadow-sm"
             >
-              Visit Website
-            </a>
+              Since 2007
+            </span>
+
+            <p class="text-gray-600 text-lg leading-relaxed">
+              Duerow Colors Private Limited was established in 2007 and has been
+              manufacturing high-quality
+              <span class="font-semibold text-gray-800"
+                >paints, primers, putty, cement-based paints, tile grout,
+                adhesive, and epoxy coatings</span
+              >. Since <span class="font-semibold text-gray-800"
+                >April 25, 2018</span
+              >, we have been in technical collaboration with
+              <span class="font-semibold text-[#41a4c3]"
+                >Regent Paints Inc., USA</span
+              >.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <div
+              class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100"
+            >
+              <div class="flex-shrink-0 mt-1 p-1.5 bg-blue-50 rounded-lg">
+                <svg
+                  class="w-5 h-5 text-[#41a4c3]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-900 text-lg">
+                  Technology & Guidance
+                </h3>
+                <p class="text-gray-600 mt-1">
+                  Regent Paints Inc. guides Duerow Colors in <span
+                    class="font-semibold text-gray-800"
+                    >formulation, technology upgrades, and marketing</span
+                  >.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100"
+            >
+              <div class="flex-shrink-0 mt-1 p-1.5 bg-blue-50 rounded-lg">
+                <svg
+                  class="w-5 h-5 text-[#41a4c3]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-900 text-lg">
+                  Authorized Partner
+                </h3>
+                <p class="text-gray-600 mt-1">
+                  Duerow Colors Pvt. Ltd. is authorized to <span
+                    class="font-semibold text-gray-800"
+                    >repackage and relabel Regent Paints products</span
+                  > for distribution.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Image Section -->
-        <div class="flex justify-center md:w-1/2">
-          <div class="relative w-full max-w-[450px]">
+        <div class="lg:w-1/2">
+          <div class="relative group">
             <div
-              class="relative before:absolute before:rounded-md before:bg-[#41a4c3] before:w-full before:h-full before:content-[''] before:-z-10 before:-left-3 before:-top-3"
+              class="absolute -inset-3 bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl rotate-1 group-hover:rotate-2 transition-transform duration-500 opacity-80 group-hover:opacity-100"
             >
-              <img
-                alt="Paint Factory"
-                src="/images/paint_man.webp"
-                width="400"
-                height="365"
-                decoding="async"
-                class="w-full rounded-md shadow-lg"
-                loading="lazy"
-              />
+            </div>
+            <img
+              alt="Paint Factory"
+              src="/images/paint_man.webp"
+              width="600"
+              height="400"
+              decoding="async"
+              class="relative rounded-xl shadow-xl w-full h-auto object-cover transform group-hover:-translate-y-1 transition-transform duration-500"
+              loading="lazy"
+            />
+            <div
+              class="absolute -bottom-5 -right-5 bg-white px-5 py-3 rounded-xl shadow-lg border border-gray-100 group-hover:scale-105 transition-transform duration-300"
+            >
+              <div class="flex items-center gap-2">
+                <div class="p-1.5 bg-blue-50 rounded-lg">
+                  <svg
+                    class="w-4 h-4 text-[#41a4c3]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <p class="text-sm font-semibold text-[#41a4c3]">
+                  Technical Collaboration Since 2018
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
   <!-- Second Section -->
   <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h1 class="font-bold text-[#404040] lg:text-4xl text-2xl uppercase">
-          Why People Choosing Us
+    <div class="container mx-auto px-4 max-w-7xl">
+      <div class="text-center mb-16">
+        <h1
+          class="font-bold text-gray-800 lg:text-4xl text-3xl uppercase tracking-wide mb-4"
+        >
+          Why People Choose Us
         </h1>
+        <div class="w-20 h-1 bg-[#41a4c3] mx-auto"></div>
       </div>
 
-      <div class="flex flex-wrap justify-between gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {
           items.map((item) => (
-            <div class="w-full md:w-[30%] border-[1px] border-gray-300 border-dashed hover:border-[#41a4c3] active:border-[#41a4c3] rounded-lg p-6 flex flex-col shadow-md hover:shadow-lg transition-all duration-300 group">
-              <h3 class="text-xl font-bold text-[#404040]">{item.title}</h3>
-              <hr class="w-full border-t-[1px] border-dashed border-gray-300 my-3 group-hover:border-[#41a4c3] group-active:border-[#41a4c3] transition-all duration-300" />
-              <div class="flex gap-4 items-start">
-                <div class="text-5xl text-[#41a4c3]">{item.icon}</div>
-                <p class="text-[#888888]">{item.text}</p>
+            <div class="relative bg-white rounded-xl p-8 flex flex-col h-full transition-all duration-300 hover:shadow-xl border border-gray-100 hover:border-[#41a4c3]/30 group overflow-hidden">
+              {/* Hover effect background */}
+              <div class="absolute inset-0 bg-gradient-to-br from-white to-[#f0f9fb] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0" />
+
+              {/* Content */}
+              <div class="relative z-10 flex flex-col h-full">
+                {/* Icon */}
+                <div class="text-5xl text-[#41a4c3] mb-4 transition-transform duration-300 group-hover:scale-110">
+                  {item.icon}
+                </div>
+
+                {/* Title */}
+                <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-[#41a4c3] transition-colors duration-300">
+                  {item.title}
+                </h3>
+
+                {/* Divider */}
+                <div class="w-12 h-1 bg-[#41a4c3] mb-4 rounded-full" />
+
+                {/* Text */}
+                <p class="text-gray-600 flex-grow">{item.text}</p>
               </div>
             </div>
           ))

@@ -9,103 +9,161 @@ import ContactForm from "../components/Contact-Form.astro";
 <BaseLayout pageTitle={pageTitle}>
   <!-- Hero Section -->
   <section
-    class="relative flex flex-col items-center justify-center z-30 bg-no-repeat bg-center bg-cover shadow-lg w-full sm:h-[400px] lg:h-[620px] h-[300px]"
+    class="relative flex flex-col items-center justify-center z-30 bg-no-repeat bg-center bg-cover w-full min-h-[300px] sm:min-h-[400px] lg:min-h-[620px] overflow-hidden"
     style="background-image: url('/images/paint_bg.jpg');"
   >
-    <div class="absolute inset-0 bg-black/60"></div>
-    <div class="relative px-4 sm:px-6 lg:px-12 text-center">
-      <h2
-        class="text-white text-[32px] sm:text-[40px] lg:text-[60px] font-bold leading-tight mb-4"
+    <!-- Animated gradient overlay -->
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70 animate-gradient-shift"
+    >
+    </div>
+
+    <!-- Content container with smooth entrance animation -->
+    <div class="relative px-4 sm:px-6 lg:px-12 text-center animate-fade-in-up">
+      <h1
+        class="text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6"
+        style="text-shadow: 0 2px 10px rgba(0,0,0,0.3);"
       >
-        Contact
-      </h2>
-      <ol
-        class="flex flex-wrap justify-center items-center gap-2 text-white text-base sm:text-lg"
+        <span
+          class="inline-block transform transition-all duration-500 hover:scale-105"
+        >
+          Contact <span class="text-[#41a4c3]">Duerow</span>
+        </span>
+      </h1>
+
+      <p
+        class="max-w-2xl mx-auto text-white/90 text-lg sm:text-xl lg:text-2xl mb-8 font-light"
       >
-        <li class="relative after:content-['/'] after:mx-2 after:opacity-70">
-          <a href="/" class="hover:text-[#41a4c3] transition-colors">Home</a>
-        </li>
-        <li class="text-[#41a4c3]">contact</li>
-      </ol>
+        Crafting premium colors since 2007 with American excellence
+      </p>
+
+      <!-- Breadcrumbs with improved interaction -->
+      <nav aria-label="Breadcrumb">
+        <ol
+          class="flex flex-wrap justify-center items-center gap-2 text-white text-base sm:text-lg"
+        >
+          <li
+            class="relative flex items-center after:content-['/'] after:mx-2 after:opacity-50 after:text-sm"
+          >
+            <a
+              href="/"
+              class="hover:text-[#41a4c3] transition-colors duration-300 flex items-center group"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 mr-1 group-hover:translate-x-0.5 transition-transform"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                ></path>
+              </svg>
+              Home
+            </a>
+          </li>
+          <li class="text-[#41a4c3] font-medium flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 mr-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            Contact
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Decorative elements -->
+    <div
+      class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/30 to-transparent"
+    >
+    </div>
+
+    <!-- Scroll indicator -->
+    <div
+      class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+    >
+      <svg
+        class="h-6 w-6 lg:w-8 lg:h-8 text-white/80"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
     </div>
   </section>
 
-  <section class="relative pt-[120px] z-20">
-    <div class="wrapper">
-      <div class="lg:pb-[50px] pb-[25px]">
-        <div class="flex justify-center items-center flex-wrap gap-3 px-4">
-          <div class="lg:mb-0 mb-7">
-            <div
-              class="text-center p-[40px] w-[300px]"
-              style="box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;"
-            >
-              <div
-                class="w-[85px] h-[85px] bg-[#f5f5f5] leading-[85px] text-center mx-auto rounded-full flex items-center justify-center"
-              >
-                <div class="icon">
-                  <span class="text-[35px] leading-[85px] text-[#41a4c3]">
-                    <Icon name="map" id="map" />
-                  </span>
-                </div>
-              </div><h2
-                class="text-[25px] text-[#282e3f] font-medium my-[20px]"
-              >
-                Address
-              </h2><p class="text-[#666] text-[16px] leading-[22px]">
-                Green Square Market, Hisar, Haryana, 125001
-              </p>
-            </div>
+  <section class="relative py-20 bg-gray-50 z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap justify-center gap-8">
+        <!-- Address Card -->
+        <div
+          class="w-full sm:w-[350px] bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-8 text-center"
+        >
+          <div
+            class="w-20 h-20 bg-[#f0f9fb] rounded-full flex items-center justify-center mx-auto mb-6"
+          >
+            <span class="text-3xl text-[#41a4c3]">
+              <Icon name="map" id="map" />
+            </span>
           </div>
-          <div class="lg:mb-0 mb-7">
-            <div
-              class="text-center p-[40px] w-[300px]"
-              style="box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;"
-            >
-              <div
-                class="w-[85px] h-[85px] bg-[#f5f5f5] leading-[85px] text-center mx-auto rounded-full flex items-center justify-center"
-              >
-                <div class="icon">
-                  <span class="text-[35px] leading-[85px] text-[#41a4c3]">
-                    <Icon name="envelope" id="envelope" />
-                  </span>
-                </div>
-              </div>
-              <h2 class="text-[25px] text-[#282e3f] font-medium my-[20px]">
-                Email Us
-              </h2>
-              <p class="text-[#666] text-[16px] leading-[22px]">
-                duerowpaints@gmail.com
-              </p>
-              <p class="text-[#666] text-[16px] leading-[22px]">
-                duerow@gmail.com
-              </p>
-            </div>
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">Address</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Green Square Market, Hisar, Haryana, 125001
+          </p>
+        </div>
+
+        <!-- Email Card -->
+        <div
+          class="w-full sm:w-[350px] bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-8 text-center"
+        >
+          <div
+            class="w-20 h-20 bg-[#f0f9fb] rounded-full flex items-center justify-center mx-auto mb-6"
+          >
+            <span class="text-3xl text-[#41a4c3]">
+              <Icon name="envelope" id="envelope" />
+            </span>
           </div>
-          <div class="lg:mb-0 mb-7">
-            <div
-              class="text-center p-[40px] w-[300px]"
-              style="box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;"
-            >
-              <div
-                class="w-[85px] h-[85px] bg-[#f5f5f5] leading-[85px] text-center mx-auto rounded-full flex items-center justify-center"
-              >
-                <div class="icon">
-                  <span class="text-[35px] leading-[85px] text-[#41a4c3]">
-                    <Icon name="mobile" id="mobile" />
-                  </span>
-                </div>
-              </div>
-              <h2 class="text-[25px] text-[#282e3f] font-medium my-[20px]">
-                Call Now
-              </h2>
-              <p class="text-[#666] text-[16px] leading-[22px]">
-                +1 800 123 456 789
-              </p>
-              <p class="text-[#666] text-[16px] leading-[22px]">
-                +1 800 123 654 987
-              </p>
-            </div>
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">Email Us</h3>
+          <p class="text-gray-600 leading-relaxed mb-2">
+            duerowpaints@gmail.com
+          </p>
+          <p class="text-gray-600 leading-relaxed">duerow@gmail.com</p>
+        </div>
+
+        <!-- Phone Card -->
+        <div
+          class="w-full sm:w-[350px] bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-8 text-center"
+        >
+          <div
+            class="w-20 h-20 bg-[#f0f9fb] rounded-full flex items-center justify-center mx-auto mb-6"
+          >
+            <span class="text-3xl text-[#41a4c3]">
+              <Icon name="mobile" id="mobile" />
+            </span>
           </div>
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">Call Now</h3>
+          <p class="text-gray-600 leading-relaxed mb-2">+91 94160-41413</p>
+          <p class="text-gray-600 leading-relaxed">+91 98963-21413</p>
         </div>
       </div>
     </div>
