@@ -51,12 +51,12 @@ const Slider1 = () => {
   };
 
   return (
-    <div className="w-full h-[82vh] max-h-[800px] relative overflow-hidden shadow-xl">
+    <div className="w-full h-[82vh] max-h-[450px] relative overflow-hidden shadow-xl">
       <Slider {...settings}>
         {images.map((img, index) => (
           <div key={index} className="relative">
             <div
-              className="w-full h-[82vh] max-h-[800px] bg-cover bg-center bg-no-repeat"
+              className="w-full h-[82vh] max-h-[450px] bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${img})` }}
             />
           </div>
